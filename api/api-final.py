@@ -1,6 +1,7 @@
 import flask
 from flask import request, jsonify
 import sqlite3
+import os.path
 
 app = flask.Flask(__name__)
 app.config["DEBUG"] = True
@@ -22,7 +23,10 @@ def home():
 # http://127.0.0.1:5000/api/v1/resources/books/all
 @app.route('/api/v1/resources/books/all', methods=['GET'])
 def api_all():
-    conn = sqlite3.connect('books.db')
+    base_dir = os.path.dirname(os.path.abspath(__file__))
+    db_path = os.path.join(base_dir, "books.db")
+
+    conn = sqlite3.connect(db_path)
     conn.row_factory = dict_factory
     cur = conn.cursor()
     all_books = cur.execute('SELECT * FROM books;').fetchall()
@@ -61,7 +65,10 @@ def api_filter():
 
     query = query[:-4] + ';'
 
-    conn = sqlite3.connect('books.db')
+    base_dir = os.path.dirname(os.path.abspath(__file__))
+    db_path = os.path.join(base_dir, "books.db")
+
+    conn = sqlite3.connect(db_path)
     conn.row_factory = dict_factory
     cur = conn.cursor()
 
