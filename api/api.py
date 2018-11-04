@@ -24,13 +24,36 @@ books = [
 ]
 
 # Routes
+#http://127.0.0.1:5000/
 @app.route('/', methods=['GET'])
 def home():
     return "<h1>Distant Reading Archive</h1><p>This site is a prototype API for distant reading of science fiction novels.</p>"
 
 # A route to return all of the available entries in our catalog.
+# http://127.0.0.1:5000/api/v1/resources/books/all
 @app.route('/api/v1/resources/books/all', methods=['GET'])
 def api_all():
     return jsonify(books)
+
+# Filtering ID
+# 127.0.0.1:5000/api/v1/resources/books?id=0
+@app.route('/api/v1/resources/books', methods=['GET'])
+def api_id():
+    # Check if ID came with the URL
+    # If it was provided, save in a variable
+    # If it was not, display an error
+    if 'id' in request.args:
+        id = int(request.args['id'])
+    else:
+        return "Error: There is not ID calling the method"
+
+    results = []
+
+    # Reading all books and adding only with the ID
+    for book in books:
+        if book['id'] == id:
+            results.append(book)
+
+    return jsonify(results)
 
 app.run()
