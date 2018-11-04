@@ -13,7 +13,7 @@ def create_table():
     c.execute("CREATE TABLE IF NOT EXISTS stuffToPlot(unix REAL, datestamp TEXT, keyword TEXT, value REAL)")
 
 def data_entry():
-    c.execute("INSERT INTO stuffToPlot VALUES(14512332, '2016-01-01', 'Python', 5)")
+    c.execute("INSERT INTO stuffToPlot VALUES(145123123213212, '2016-01-01', 'Python', 5)")
     conn.commit() # Everytime we modify our data, we need to run this command
     c.close()
     conn.close()
