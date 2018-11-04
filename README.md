@@ -12,3 +12,6 @@
 - To verify the versions of the installations:
 ```python --version```
 ```pip --version```
+
+## References:
+https://www.youtube.com/watch?v=o-vsdfCBpsU
