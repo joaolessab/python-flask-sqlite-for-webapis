@@ -1,5 +1,7 @@
 # Python-Flask-and-SQLite-for-WebAPIs
 
+<img src="https://github.com/jvlessa/Python-Flask-and-SQLite-for-WebAPIs/blob/master/repologo.png">
+
 ## Installation:
 1. Download Python [version 3](https://www.python.org/downloads/);
 2. Install Python and put the installation path on the "PATH" Enviroment Variable;
