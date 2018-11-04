@@ -13,5 +13,8 @@
 ```python --version```
 ```pip --version```
 
+## Visualizing the dabatase with a GUI Interface
+- Install [DB Browser for SQlite](https://sqlitebrowser.org/)
+
 ## References:
 https://www.youtube.com/watch?v=o-vsdfCBpsU
