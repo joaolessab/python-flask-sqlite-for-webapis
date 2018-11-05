@@ -18,5 +18,8 @@
 ## Visualizing the dabatase with a GUI Interface
 - Install [DB Browser for SQlite](https://sqlitebrowser.org/)
 
+## Testing Simple API Requests
+- Run the script "api/api-final.py" e open the url: "http://127.0.0.1:5000/"
+
 ## References:
 https://www.youtube.com/watch?v=o-vsdfCBpsU
